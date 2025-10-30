@@ -9,6 +9,19 @@ const getAuthToken = () => {
 
 // Helper function to handle API responses
 const handleResponse = async (response) => {
+  // Check if response is JSON
+  const contentType = response.headers.get('content-type');
+  const isJson = contentType && contentType.includes('application/json');
+
+  if (!isJson) {
+    // If not JSON, likely an error page or CORS issue
+    const text = await response.text();
+    console.error('Non-JSON response:', text);
+    throw new Error(
+      `API Error: Received HTML instead of JSON. Check if backend is running and CORS is configured. Status: ${response.status}`
+    );
+  }
+
   const data = await response.json();
 
   if (!response.ok) {
