@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Read(//c/Users/ebene/Desktop/Projects/life-hospital-backend/**)",
+      "Bash(cat:*)",
+      "Bash(psql:*)",
+      "Bash(node setup-database.js:*)",
+      "Bash(curl:*)",
+      "Bash(node src/server.js:*)",
+      "Bash(node create-admin.js:*)",
+      "Bash(nslookup ep-autumn-river-adio3lqh-pooler.c-2.us-east-1.aws.neon.tech)",
+      "Bash(nslookup:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

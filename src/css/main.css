@@ -1,0 +1,13 @@
+/* Main CSS - Import all stylesheets */
+
+/* Base Styles */
+@import './variables.css';
+@import './reset.css';
+
+/* Layout & Components */
+@import './layout.css';
+@import './components.css';
+
+/* Page-specific Styles */
+@import './auth.css';
+@import './dashboard.css';
