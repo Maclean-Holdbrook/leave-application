@@ -4,10 +4,10 @@ A comprehensive leave management system for Life Hospital staff members to apply
 
 ## Project Structure
 
-This project consists of two main parts:
+This is the **Frontend** React application. The backend API is in a separate repository:
 
-1. **Frontend** (`/life-hospital`) - React application
-2. **Backend** (`/life-hospital-backend`) - Node.js/Express API with Neon PostgreSQL
+- **Frontend Repository:** [Maclean-Holdbrook/leave-application](https://github.com/Maclean-Holdbrook/leave-application)
+- **Backend Repository:** [Maclean-Holdbrook/leave-application-backend](https://github.com/Maclean-Holdbrook/leave-application-backend)
 
 ## Features
 
@@ -111,4 +111,4 @@ The API will be available at `http://localhost:5000`
 
 ## License
 
-Proprietary - Life Hospital © 2025
+Proprietary - Life Hospital ï¿½ 2025
