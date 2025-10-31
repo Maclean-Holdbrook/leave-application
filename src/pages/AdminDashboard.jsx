@@ -625,7 +625,8 @@ const AdminDashboard = () => {
         {/* Tabs */}
         <div className="card">
           <div className="card-header">
-            <div style={{ display: 'flex', gap: '0.5rem', borderBottom: 'none' }}>
+            {/* Desktop Tabs */}
+            <div className="admin-tabs-desktop" style={{ display: 'flex', gap: '0.5rem', borderBottom: 'none' }}>
               <button
                 className={`btn btn-sm ${activeTab === 'overview' ? 'btn-primary' : 'btn-outline'}`}
                 onClick={() => setActiveTab('overview')}
@@ -665,6 +666,22 @@ const AdminDashboard = () => {
                 <BarChart size={16} />
                 Reports
               </button>
+            </div>
+
+            {/* Mobile Dropdown */}
+            <div className="admin-tabs-mobile">
+              <select
+                className="form-select"
+                value={activeTab}
+                onChange={(e) => setActiveTab(e.target.value)}
+                style={{ width: '100%' }}
+              >
+                <option value="overview">Overview</option>
+                <option value="requests">Leave Requests {pendingCount > 0 ? `(${pendingCount})` : ''}</option>
+                <option value="policies">Leave Policies</option>
+                <option value="balances">Employee Balances</option>
+                <option value="reports">Reports</option>
+              </select>
             </div>
           </div>
           <div className="card-body">

@@ -193,7 +193,9 @@ const EmployeeDashboard = () => {
         <div className="card" style={{ marginTop: '2rem' }}>
           <div className="card-header">
             <h3 className="card-title">My Leave Requests</h3>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+
+            {/* Desktop Filter Buttons */}
+            <div className="employee-filters-desktop" style={{ display: 'flex', gap: '0.5rem' }}>
               <button
                 className={`btn btn-sm ${filterStatus === 'all' ? 'btn-primary' : 'btn-outline'}`}
                 onClick={() => setFilterStatus('all')}
@@ -218,6 +220,21 @@ const EmployeeDashboard = () => {
               >
                 Rejected
               </button>
+            </div>
+
+            {/* Mobile Filter Dropdown */}
+            <div className="employee-filters-mobile">
+              <select
+                className="form-select"
+                value={filterStatus}
+                onChange={(e) => setFilterStatus(e.target.value)}
+                style={{ width: '100%', maxWidth: '200px' }}
+              >
+                <option value="all">All Requests</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+              </select>
             </div>
           </div>
           <div className="card-body">

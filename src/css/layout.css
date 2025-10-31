@@ -85,6 +85,67 @@
   font-weight: 500;
 }
 
+/* Mobile Navigation Styles */
+.navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.navbar-hamburger:hover {
+  background-color: var(--bg-secondary);
+}
+
+.navbar-mobile-menu {
+  display: none;
+}
+
+.navbar-mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.navbar-mobile-link:hover {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+.navbar-mobile-link:last-child {
+  border-bottom: none;
+}
+
+.navbar-mobile-logout {
+  color: var(--danger-color);
+}
+
+.navbar-mobile-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
 /* Sidebar Layout */
 .layout-with-sidebar {
   display: flex;
@@ -203,6 +264,24 @@
   }
 }
 
+/* Admin Dashboard Tabs - Desktop/Mobile Toggle */
+.admin-tabs-mobile {
+  display: none;
+}
+
+.admin-tabs-desktop {
+  display: flex;
+}
+
+/* Employee Filters - Desktop/Mobile Toggle */
+.employee-filters-mobile {
+  display: none;
+}
+
+.employee-filters-desktop {
+  display: flex;
+}
+
 @media (max-width: 768px) {
   .layout-with-sidebar {
     flex-direction: column;
@@ -223,10 +302,85 @@
 
   .navbar-container {
     padding: 0 var(--spacing-md);
+    position: relative;
   }
 
   .navbar-menu {
     gap: var(--spacing-md);
+  }
+
+  /* Hide desktop navbar elements on mobile */
+  .navbar-menu-desktop,
+  .navbar-user-desktop {
+    display: none !important;
+  }
+
+  /* Show mobile hamburger button */
+  .navbar-hamburger {
+    display: block;
+  }
+
+  /* Show mobile menu dropdown */
+  .navbar-mobile-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-md);
+    border-top: 1px solid var(--border-color);
+    z-index: 1000;
+  }
+
+  /* Adjust navbar brand for mobile */
+  .navbar-brand-text {
+    font-size: 1rem;
+  }
+
+  /* Admin Dashboard Tabs - Show dropdown on mobile */
+  .admin-tabs-desktop {
+    display: none !important;
+  }
+
+  .admin-tabs-mobile {
+    display: block;
+    width: 100%;
+  }
+
+  /* Employee Filters - Show dropdown on mobile */
+  .employee-filters-desktop {
+    display: none !important;
+  }
+
+  .employee-filters-mobile {
+    display: block;
+  }
+
+  /* Adjust card header for mobile */
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem;
+  }
+
+  /* Page header adjustments */
+  .page-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .page-header .btn {
+    width: 100%;
+  }
+
+  /* Main content padding */
+  .main-content {
+    padding: var(--spacing-md);
+  }
+
+  .page-title {
+    font-size: 1.5rem;
   }
 }
 
