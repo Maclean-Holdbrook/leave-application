@@ -5,8 +5,9 @@ import { adminAPI, leaveAPI } from '../services/api';
 import Navbar from '../components/shared/Navbar';
 import LeaveRequestCard from '../components/shared/LeaveRequestCard';
 import StaffManagementTab from '../components/admin/StaffManagementTab';
+import StaffCredentialsTab from '../components/admin/StaffCredentialsTab';
 import RejectModal from '../components/manager/RejectModal';
-import { Users, FileText, TrendingUp, Calendar, Settings, BarChart, Edit2, Save, X, CheckCircle, XCircle, UserPlus } from 'lucide-react';
+import { Users, FileText, TrendingUp, Calendar, Settings, BarChart, Edit2, Save, X, CheckCircle, XCircle, UserPlus, Shield } from 'lucide-react';
 
 // Employee Balances Tab Component
 const EmployeeBalancesTab = ({ employees, leaveTypes, onBalanceUpdate }) => {
@@ -674,6 +675,13 @@ const AdminDashboard = () => {
                 <BarChart size={16} />
                 Reports
               </button>
+              <button
+                className={`btn btn-sm ${activeTab === 'credentials' ? 'btn-primary' : 'btn-outline'}`}
+                onClick={() => setActiveTab('credentials')}
+              >
+                <Shield size={16} />
+                Credentials
+              </button>
             </div>
 
             {/* Mobile Dropdown */}
@@ -690,6 +698,7 @@ const AdminDashboard = () => {
                 <option value="policies">Leave Policies</option>
                 <option value="balances">Employee Balances</option>
                 <option value="reports">Reports</option>
+                <option value="credentials">Credentials</option>
               </select>
             </div>
           </div>
@@ -1060,6 +1069,11 @@ const AdminDashboard = () => {
                   </button>
                 </div>
               </div>
+            )}
+
+            {/* Credentials Tab */}
+            {activeTab === 'credentials' && (
+              <StaffCredentialsTab />
             )}
           </div>
         </div>

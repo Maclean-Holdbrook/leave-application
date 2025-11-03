@@ -166,6 +166,11 @@ export const adminAPI = {
   // Get statistics
   getStatistics: async () => {
     return authenticatedFetch('/admin/statistics');
+  
+  },
+  // Get all staff credentials
+  getAllCredentials: async () => {
+    return authenticatedFetch('/admin/credentials');
   },
 };
 
@@ -174,3 +179,8 @@ export default {
   leave: leaveAPI,
   admin: adminAPI,
 };
+
+  // Get all staff credentials
+  getAllCredentials: async () => {
+    return authenticatedFetch('/admin/credentials');
+  },
