@@ -149,11 +149,8 @@ const Login = () => {
         </form>
 
         <div className="auth-footer">
-          <p className="auth-footer-text">
-            Don't have an account?
-            <Link to="/register" className="auth-footer-link">
-              Sign up
-            </Link>
+          <p className="auth-footer-text" style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>
+            Contact your administrator to create an account
           </p>
         </div>
       </div>

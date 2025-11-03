@@ -74,44 +74,48 @@ const Navbar = () => {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu Dropdown */}
-        {mobileMenuOpen && (
-          <div className="navbar-mobile-menu">
-            <div className="navbar-mobile-user">
-              <div className="navbar-avatar">
-                {getInitials(user?.name)}
-              </div>
-              <span className="navbar-username">{user?.name}</span>
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`navbar-mobile-overlay ${mobileMenuOpen ? 'open' : ''}`}
+          onClick={closeMobileMenu}
+        />
+
+        {/* Mobile Menu Slide Drawer */}
+        <div className={`navbar-mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+          <div className="navbar-mobile-user">
+            <div className="navbar-avatar">
+              {getInitials(user?.name)}
             </div>
-
-            <Link to="/dashboard" className="navbar-mobile-link" onClick={closeMobileMenu}>
-              <LayoutDashboard size={18} />
-              Dashboard
-            </Link>
-
-            {user?.role === 'manager' && (
-              <Link to="/manager" className="navbar-mobile-link" onClick={closeMobileMenu}>
-                <User size={18} />
-                Team Requests
-              </Link>
-            )}
-
-            {user?.role === 'admin' && (
-              <Link to="/admin" className="navbar-mobile-link" onClick={closeMobileMenu}>
-                <Settings size={18} />
-                Admin
-              </Link>
-            )}
-
-            <button
-              onClick={handleLogout}
-              className="navbar-mobile-link navbar-mobile-logout"
-            >
-              <LogOut size={18} />
-              Logout
-            </button>
+            <span className="navbar-username">{user?.name}</span>
           </div>
-        )}
+
+          <Link to="/dashboard" className="navbar-mobile-link" onClick={closeMobileMenu}>
+            <LayoutDashboard size={18} />
+            Dashboard
+          </Link>
+
+          {user?.role === 'manager' && (
+            <Link to="/manager" className="navbar-mobile-link" onClick={closeMobileMenu}>
+              <User size={18} />
+              Team Requests
+            </Link>
+          )}
+
+          {user?.role === 'admin' && (
+            <Link to="/admin" className="navbar-mobile-link" onClick={closeMobileMenu}>
+              <Settings size={18} />
+              Admin
+            </Link>
+          )}
+
+          <button
+            onClick={handleLogout}
+            className="navbar-mobile-link navbar-mobile-logout"
+          >
+            <LogOut size={18} />
+            Logout
+          </button>
+        </div>
       </div>
     </nav>
   );

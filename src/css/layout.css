@@ -320,17 +320,42 @@
     display: block;
   }
 
-  /* Show mobile menu dropdown */
+  /* Show mobile menu as slide drawer */
   .navbar-mobile-menu {
     display: block;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  /* Overlay for mobile menu */
+  .navbar-mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    background-color: var(--bg-primary);
-    box-shadow: var(--shadow-md);
-    border-top: 1px solid var(--border-color);
-    z-index: 1000;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .navbar-mobile-overlay.open {
+    display: block;
+    opacity: 1;
   }
 
   /* Adjust navbar brand for mobile */

@@ -134,6 +134,14 @@ export const adminAPI = {
     return authenticatedFetch('/admin/users');
   },
 
+  // Create staff account
+  createStaffAccount: async (userData) => {
+    return authenticatedFetch('/admin/users', {
+      method: 'POST',
+      body: JSON.stringify(userData),
+    });
+  },
+
   // Update user role
   updateUserRole: async (userId, role) => {
     return authenticatedFetch(`/admin/users/${userId}/role`, {

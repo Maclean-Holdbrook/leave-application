@@ -3,7 +3,6 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LeaveProvider } from './contexts/LeaveContext';
 import PrivateRoute from './components/shared/PrivateRoute';
 import Login from './components/auth/Login';
-import Register from './components/auth/Register';
 import EmployeeDashboard from './pages/EmployeeDashboard';
 import ManagerDashboard from './pages/ManagerDashboard';
 import AdminDashboard from './pages/AdminDashboard';
@@ -50,7 +49,6 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
 
             {/* Protected Routes */}
             <Route
